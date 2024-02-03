@@ -1,0 +1,41 @@
+#Taxes
+
+TaxpayerID=str(input("Enter Taxpayer ID: "))
+TaxpayerName=str(input("Enter Taxpayer Name: "))
+CategoryCode=str(input("Enter Category Code: "))
+TaxableIncome=float(input("Enter Taxable Income: "))
+
+if CategoryCode == 'A' or CategoryCode == 'a':
+	Category = 'Single'
+	Excess = TaxableIncome - 17850
+	FirstIncome = TaxableIncome - Excess
+	FirstTax = 0.125 * FirstIncome
+	ExcessTax = 0.1 * Excess
+	SumTax = FirstTax + ExcessTax
+elif CategoryCode == 'B' or CategoryCode == 'b':
+	Category = 'Head of the Family'
+	Excess = TaxableIncome - 23900
+	FirstIncome = TaxableIncome - Excess
+	FirstTax = 0.125 * FirstIncome
+	ExcessTax = 0.1 * Excess
+	SumTax = FirstTax + ExcessTax
+elif CategoryCode == 'C' or CategoryCode == 'c':
+	Category = 'Married (Joint)'
+	Excess = taxincome - 29750
+	FirstIncome = TaxableIncome - Excess
+	FirstTax = 0.125 * FirstIncome
+	ExcessTax = 0.1 * Excess
+	SumTax = FirstTax + ExcessTax
+else:
+	Category = 'Married (Separated)'
+	Excess = TaxableIncome - 14875
+	FirstIncome = TaxableIncome - Excess
+	FirstTax = 0.125 * FirstIncome
+	ExcessTax = 0.1 * Excess
+	SumTax = FirstTax + ExcessTax
+
+print("\nTaxpayer ID: " ,TaxpayerID)
+print("Tax Payer Name: " ,TaxpayerName)
+print("Category: " ,Category)
+print("Tax: $" ,SumTax)
+
